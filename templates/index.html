@@ -7,8 +7,15 @@
 		<meta name="description" content="">
  		<meta name="author" content="">
 		<title>Hello, World!</title>
-		<link rel="stylesheet" href="../static/normalize.css">
-		<link rel="stylesheet" href="../static/skeleton.css">
+				  <!-- Scripts
+		  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/normalize.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/skeleton.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/ithub-prettify-theme.css') }}" type="text/css">
+		<script src="{{ url_for('static',filename='js/site.js') }}"> </script>
+		<script src="{{ url_for('static',filename='js/ga.js') }}"> </script>
+		<script src="{{ url_for('static',filename='js/run_prettify.js') }}"> </script>
+		
 		
 	</head>
 	<body>
@@ -19,6 +26,76 @@
 			  <h2 class="title">Finding Value in Lending Club Data</h2>
 	 
 			</section>
+		    <div class="navbar-spacer"></div>
+    		<nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="http://getskeleton.com/#intro">Intro</a></li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="http://getskeleton.com/#" data-popover="#codeNavPopover">Code</a>
+            <div id="codeNavPopover" class="popover">
+              <ul class="popover-list">
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#grid">Grid</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#typography">Typography</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#buttons">Buttons</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#forms">Forms</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#lists">Lists</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#code">Code</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#tables">Tables</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#queries">Queries</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="http://getskeleton.com/#utilities">Utilities</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="navbar-item"><a class="navbar-link" href="http://getskeleton.com/#examples">Examples</a></li>
+          <li class="navbar-item">
+            <a class="navbar-link" href="http://getskeleton.com/#" data-popover="#moreNavPopover">More</a>
+            <div id="moreNavPopover" class="popover">
+              <ul class="popover-list">
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton">On Github</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton#browser-support">Browsers</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton#license">License</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton#extensions">Extensions</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton/releases">Versions</a>
+                </li>
+                <li class="popover-item">
+                  <a class="popover-link" href="https://github.com/dhg/Skeleton#colophon">Colophon</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+		
+		
 			
 		</div>
 		
