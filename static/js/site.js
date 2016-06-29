@@ -17,6 +17,7 @@ $(function() {
         "/": '&#x2F;'
       }
 
+
   function init() {
     $window.on('scroll', onScroll)
     $window.on('resize', resize)
