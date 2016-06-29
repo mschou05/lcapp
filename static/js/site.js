@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 
   // Variables
   var $codeSnippets = $('.code-example-body'),
