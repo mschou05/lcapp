@@ -50,6 +50,9 @@ def index():
   	#return render_template('index.html')
     
     if request.method=='GET':
+        f=open('dillModelsAndEncoders','r')
+        dct= dill.load(f)
+        f.close()
         return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
