@@ -22,21 +22,16 @@ def add_numbers():
 @app.route('/_return_grades')
 def return_grades():
     """Add two numbers server side, ridiculous but well..."""
-    grade = request.args.get('grade', 0, type=str)
-    subgrade = request.args.get('b', 0, type=str)
+    grade = request.args.get('grade', 'A', type=str)
+    subgrade = request.args.get('subgrade', '1', type=str)
     dti = request.args.get('dti', 0, type=float)
     revol_util = request.args.get('revol_util', 0, type=float)
-    f=open('pickleModelsAndEncoders','r')
-    mdl_ = pickle.load(f)
-    f.close()
     f=open('pickleModelsAndEncoders','r')
     dct= pickle.load(f)
     f.close()
     mdl_=dct['pipeline']
     encodings=dct['encodings']
-    grade = 'A'
-    subGrade = '2'
-    x=[encodings['grade'].transform(grade),encodings['sub_grade'].transform(grade+subGrade),dti,revol_util]
+    x=[encodings['grade'].transform(grade),encodings['sub_grade'].transform(grade+subgrade),dti,revol_util]
     ret=mdl_.predict(x)[0]-1
     prc_return="{0:.2f}".format(ret*100)+'%'
     return jsonify(result='Your model predicted total return is: '+prc_return,
