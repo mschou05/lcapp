@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify
-import pickle
+import dill
 import numpy as np
 #from sklearn.pipeline import Pipeline
 #from sklearn.linear_model import LinearRegression
@@ -26,8 +26,8 @@ def return_grades():
     subgrade = request.args.get('subgrade', '1', type=str)
     dti = request.args.get('dti', 0, type=float)
     revol_util = request.args.get('revol_util', 0, type=float)
-    f=open('pickleModelsAndEncoders','r')
-    dct= pickle.load(f)
+    f=open('dillModelsAndEncoders','r')
+    dct= dill.load(f)
     f.close()
     mdl_=dct['pipeline']
     encodings=dct['encodings']
