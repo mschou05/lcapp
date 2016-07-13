@@ -27,7 +27,10 @@ def return_grades():
     dti = request.args.get('dti', 0, type=float)
     revol_util = request.args.get('revol_util', 0, type=float)
     f=open('dillModelsAndEncoders','r')
-    dct= dill.load(f)
+    try:
+        dct= dill.load(f)
+    except:
+        pass
     f.close()
     mdl_=dct['pipeline']
     encodings=dct['encodings']
@@ -50,9 +53,6 @@ def index():
   	#return render_template('index.html')
     
     if request.method=='GET':
-        f=open('dillModelsAndEncoders','r')
-        dct= dill.load(f)
-        f.close()
         return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
