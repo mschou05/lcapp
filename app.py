@@ -51,10 +51,9 @@ def main():
 @app.route('/index',methods= ['GET','POST'])
 def index():
   	#return render_template('index.html')
-    
+    f=open('dillModelsAndEncoders','r')
+    dct= dill.load(f)
     if request.method=='GET':
-        f=open('dillModelsAndEncoders','r')
-        dct=dill.load(f)
         return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
