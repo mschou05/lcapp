@@ -53,6 +53,7 @@ def index():
   	#return render_template('index.html')
     
     if request.method=='GET':
+        f=open('dillModelsAndEncoders','r')
         return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
