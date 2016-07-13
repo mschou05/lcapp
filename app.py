@@ -22,10 +22,26 @@ def add_numbers():
 @app.route('/_return_grades')
 def return_grades():
     """Add two numbers server side, ridiculous but well..."""
-    
-    return jsonify(result='Your ideal loan range is: A - B',
+    grade = request.args.get('grade', 0, type=str)
+    subgrade = request.args.get('b', 0, type=str)
+    dti = request.args.get('dti', 0, type=float)
+    revol_util = request.args.get('revol_util', 0, type=float)
+    f=open('pickleModelsAndEncoders','r')
+    mdl_ = pickle.load(f)
+    f.close()
+    f=open('pickleModelsAndEncoders','r')
+    dct= pickle.load(f)
+    f.close()
+    mdl_=dct['pipeline']
+    encodings=dct['encodings']
+    grade = 'A'
+    subGrade = '2'
+    x=[encodings['grade'].transform(grade),encodings['sub_grade'].transform(grade+subGrade),dti,revol_util]
+    ret=mdl_.predict(x)[0]-1
+    prc_return="{0:.2f}".format(ret*100)+'%'
+    return jsonify(result='Your model predicted total return is: '+prc_return,
                   chars = 'Important characteristics in this range include: Debt to Income Ratio, Revolving Balance Utilized',
-                  returns ='Average returns: 4.7%',
+                  returns ='Average total return for similar: 4.7%',
                   details_paid = '94% of loans in this range paid in full',
                   details_loss = '4% of loans in this range had negative returns ')
 
@@ -39,10 +55,10 @@ def index():
   	#return render_template('index.html')
     
     if request.method=='GET':
-        return render_template('index_carto.html')
+        return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
-        return render_template('index_carto.html')
+        return render_template('index_options.html')
         #app_schou.vars['stock'] = request.form['stock_schou']
         #return redirect('/main')	
 
