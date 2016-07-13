@@ -54,6 +54,7 @@ def index():
     
     if request.method=='GET':
         f=open('dillModelsAndEncoders','r')
+        dct=dill.load(f)
         return render_template('index_options.html')
         #return render_template('userinfo_schou.html')
     else:
