@@ -27,10 +27,7 @@ def return_grades():
     dti = request.args.get('dti', 0, type=float)
     revol_util = request.args.get('revol_util', 0, type=float)
     f=open('dillModelsAndEncoders','r')
-    try:
-        dct= dill.load(f)
-    except:
-        pass
+    dct= dill.load(f)
     f.close()
     mdl_=dct['pipeline']
     encodings=dct['encodings']
