@@ -9,3 +9,4 @@ requests>=2.2.1
 simplejson==3.8.0
 numpy==1.9.2
 sklearn
+scipy
