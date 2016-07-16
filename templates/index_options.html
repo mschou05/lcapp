@@ -96,8 +96,8 @@
                   <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
                   
                     <li class="navbar-item"><a class="navbar-link" href="#initial findings">Findings</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#Tool">Tool</a></li>
                     <li class="navbar-item"><a class="navbar-link" href="#map">Returns</a></li>
-                    <li class="navbar-item"><a class="navbar-link" href="#submission form">Tool</a></li>
                   </ul>
               </div>
             </nav>
@@ -112,7 +112,60 @@
 			
 		</div>
 		
- 	
+ <!-- Tool–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
+	<div class="container" id = "Tool">
+		<h6 class="docs-header">Risk Tolerance</h6>
+        <form id='Risk_Appetite' method='post' action=''>
+          <div class="row">
+            <div class="six columns">
+              <label for="exampleRecipientInput">Loan Grade:</label>
+              <select class="u-full-width" name="grade" id="exampleRecipientInput">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                </select>
+              </div>
+              <div class="six columns">
+              <label for="exampleRecipientInput2">Loan Sub Grade:</label>
+              <select class="u-full-width" name = "subgrade" id="inputSubGrade">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+        <div class="row">
+            <label for="dti">Debt to Income (%)</label>
+            <input type="text" size="5" name="dti" id = "dti" placeholder ="50">
+        </div>
+        <div class="row">
+            <label for="credit_util">Revolving Credit Utilized (%)</label>
+            <input type="text" size="5" name="credit" id="credit_util" placeholder ="50">
+                    
+        </div>
+          
+          <!--
+          <label for="exampleMessage">Message</label>
+          <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+          <label class="example-send-yourself-copy">
+            <input type="checkbox">
+            <span class="label-body">Send a copy to yourself</span>
+          </label>-->
+          <input class="button-primary" type="submit" value="Submit" id="inputButton">
+		  
+        </form>
+        <label><span id="result"></span></label>
+        <br><label><span id="chars"></span></label>
+        <br><label><span id="returns"></span></label>
+        <br><label><span id="details_paid"></span></label>
+        <br><label><span id="details_loss"></span></label>
+      </div>
+	
 
 <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
 
@@ -183,59 +236,6 @@
     </script>
    
 
-<!-- Tool–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
-	<div class="container" id = "submission form">
-		<h6 class="docs-header">Risk Tolerance</h6>
-        <form id='Risk_Appetite' method='post' action=''>
-          <div class="row">
-            <div class="six columns">
-              <label for="exampleRecipientInput">Loan Grade:</label>
-              <select class="u-full-width" name="grade" id="exampleRecipientInput">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                </select>
-              </div>
-              <div class="six columns">
-              <label for="exampleRecipientInput2">Loan Sub Grade:</label>
-              <select class="u-full-width" name = "subgrade" id="inputSubGrade">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            </div>
-          </div>
-        <div class="row">
-            <label for="dti">Debt to Income (%)</label>
-            <input type="text" size="5" name="dti" id = "dti" placeholder ="50">
-        </div>
-        <div class="row">
-            <label for="credit_util">Revolving Credit Utilized (%)</label>
-            <input type="text" size="5" name="credit" id="credit_util" placeholder ="50">
-                    
-        </div>
-          
-          <!--
-          <label for="exampleMessage">Message</label>
-          <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
-          <label class="example-send-yourself-copy">
-            <input type="checkbox">
-            <span class="label-body">Send a copy to yourself</span>
-          </label>-->
-          <input class="button-primary" type="submit" value="Submit" id="inputButton">
-		  
-        </form>
-        <label><span id="result"></span></label>
-        <br><label><span id="chars"></span></label>
-        <br><label><span id="returns"></span></label>
-        <br><label><span id="details_paid"></span></label>
-        <br><label><span id="details_loss"></span></label>
-      </div>
    
 <!-- Generic container
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
