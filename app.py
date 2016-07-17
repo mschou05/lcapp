@@ -9,15 +9,7 @@ warnings.filterwarnings("ignore",category=DeprecationWarning)
 
 
 app = Flask(__name__)
-@app.route('/_add_numbers')
-def add_numbers():
-    """Add two numbers server side, ridiculous but well..."""
-    x = np.array([1.,8.,34.24,38.5])
-    f=open('simpleLoanModelLR','r')
-    mdl_ = pickle.load(f)
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
-    return jsonify(result=mdl_.predict(x)[0])
+
 
 @app.route('/_return_grades')
 def return_grades():

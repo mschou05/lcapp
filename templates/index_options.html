@@ -88,99 +88,114 @@
 			  <h2 class="title">Finding Value in Lending Club Data</h2>
 	 
 			</section>
+        
 <!-- NavBar –––––––––––––––––––––––––––––––––––––––––––––––––– -->
             <div class="navbar-spacer"></div>
             <nav class="navbar">
               <div class="container">
                 <ul class="navbar-list">
-                  <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
-                  
-                    <li class="navbar-item"><a class="navbar-link" href="#initial findings">Findings</a></li>
-                    <li class="navbar-item"><a class="navbar-link" href="#Tool">Tool</a></li>
-                    <li class="navbar-item"><a class="navbar-link" href="#map">Returns</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#intro">Introduction</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#Tool">Explore a Loan</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#Data">The Data</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#initial findings">Additional Research</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#Contact">Contact</a></li>
+                    <!--<li class="navbar-item"><a class="navbar-link" href="#map">Returns</a></li>-->
                   </ul>
               </div>
             </nav>
+       </div>     
+
 <!-- Intro –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 			<!-- why care about my project? -->
 			<div class="docs-section" id="intro">
+                <div class = "container">
 			  <h6 class="docs-header">Current State of Consumer Loans</h6>
-			  <p>Companies like Lending Club, Prosper and Upstart offer a new market for individual investors to invest. Lending Club releases its data on issued loans for each year and for my project I am exploring Lending Club's data from 2007-2013, the last year in which loans issued have been paid off. With this, I observed the set of all the loans features and attributes and whether or not they were paid off.</p>	  
+			  <p>Companies like Lending Club, Prosper and Upstart offer a new market for individual investors to invest. Lending Club alone has issued over $20 billion in loans. In addition to a credit grade and interest rate, most peer to peer loan platforms provide dozens of attributes of borrowers in an attempt to paint a clear picture of the borrower and her ability to repay a loan. This project attempts to synthesize these borrower attributes into a comprehensive model for predicting loan outcomes</p>	  
+                </div>
 			</div>
 		
-		
-			
-		</div>
-		
  <!-- Tool–––––––––––––––––––––––––––––––––––––––––––––––––– -->	
-	<div class="container" id = "Tool">
-		<h6 class="docs-header">Risk Tolerance</h6>
-        <form id='Risk_Appetite' method='post' action=''>
-          <div class="row">
-            <div class="six columns">
-              <label for="exampleRecipientInput">Loan Grade:</label>
-              <select class="u-full-width" name="grade" id="exampleRecipientInput">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
-                </select>
+        <div class="docs-section" id = "Tool">
+            <div class = "container">
+            <h6 class="docs-header">Explore Your Potential Loan</h6>
+            <p>Enter details for your potential loan. The tool will return our model estimate for payoffs based on similar loans in the past, as well as attributes of similar loans. </p>
+            <form id='Risk_Appetite' method='post' action=''>
+              <div class="row">
+                <div class="six columns">
+                  <label for="exampleRecipientInput">Loan Grade:</label>
+                  <select class="u-full-width" name="grade" id="exampleRecipientInput">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    </select>
+                  </div>
+                  <div class="six columns">
+                  <label for="exampleRecipientInput2">Loan Sub Grade:</label>
+                  <select class="u-full-width" name = "subgrade" id="inputSubGrade">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
               </div>
-              <div class="six columns">
-              <label for="exampleRecipientInput2">Loan Sub Grade:</label>
-              <select class="u-full-width" name = "subgrade" id="inputSubGrade">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+            <div class="row">
+                <label for="dti">Debt to Income (%)</label>
+                <input type="text" size="5" name="dti" id = "dti" placeholder ="50">
             </div>
-          </div>
-        <div class="row">
-            <label for="dti">Debt to Income (%)</label>
-            <input type="text" size="5" name="dti" id = "dti" placeholder ="50">
+            <div class="row">
+                <label for="credit_util">Revolving Credit Utilized (%)</label>
+                <input type="text" size="5" name="credit" id="credit_util" placeholder ="50">
+
+            </div>
+
+              <!--
+              <label for="exampleMessage">Message</label>
+              <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
+              <label class="example-send-yourself-copy">
+                <input type="checkbox">
+                <span class="label-body">Send a copy to yourself</span>
+              </label>-->
+              <input class="button-primary" type="submit" value="Submit" id="inputButton">
+
+            </form>
+            <label><span id="result"></span></label>
+            <br><label><span id="chars"></span></label>
+            <br><label><span id="returns"></span></label>
+            <br><label><span id="details_paid"></span></label>
+            <br><label><span id="details_loss"></span></label>
+            </div>
         </div>
-        <div class="row">
-            <label for="credit_util">Revolving Credit Utilized (%)</label>
-            <input type="text" size="5" name="credit" id="credit_util" placeholder ="50">
-                    
-        </div>
-          
-          <!--
-          <label for="exampleMessage">Message</label>
-          <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage"></textarea>
-          <label class="example-send-yourself-copy">
-            <input type="checkbox">
-            <span class="label-body">Send a copy to yourself</span>
-          </label>-->
-          <input class="button-primary" type="submit" value="Submit" id="inputButton">
-		  
-        </form>
-        <label><span id="result"></span></label>
-        <br><label><span id="chars"></span></label>
-        <br><label><span id="returns"></span></label>
-        <br><label><span id="details_paid"></span></label>
-        <br><label><span id="details_loss"></span></label>
-      </div>
-	
 
 <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
 
 <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
 
     	
-	
+<!-- The Data
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+        <div class="docs-section" id="Data">
+    	   <div class = "container">
+            <h6 class="docs-header">The data</h6>
+        
+    	   <p>This project used data on Lending Club loans issued between 2007 and 2015. Lending Club's data on loans issued and declined can be found <a href="https://www.lendingclub.com/info/download-data.action" target="_blank">here</a></p>
+    	</div>
+    </div>
+ 	
 
 
         
 <!-- Initial Findings––––––––––––––––––––––––––––––––––––––––– -->
   <div class="docs-section" id="initial findings">
     <div class = "container">
-      <h6 class="docs-header">Initial Findings</h6>
-      	<p> fig 1: A disproportionate number of loans for renewable energy uses defaulted, regardless of credit rating </p>
+      <h6 class="docs-header">Additional Research</h6>
+      	<p> </p>
+        <p> fig 1: A disproportionate number of loans for renewable energy uses defaulted, regardless of credit rating </p>
       	<p> fig	 2: Mortgage holders were also more likely to default than renters, possibly due to the collapse of the housing market and the extra debt load that mortgages bring.</p>
       	 <div class="plotdiv" id="48d4d301-c74f-4d5f-bc0c-166d2a8e5ce5"></div>
         
@@ -193,7 +208,7 @@
 				});
 			</script>
   		</div>  
-	</div>
+ </div>
 
 <!-- Map––––––––––––––––––––––––––––––––––––––––– -->
 <div id="map"></div>        
@@ -235,16 +250,34 @@
       window.onload = main;
     </script>
    
+<!-- Contact info
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+    <div class="docs-section" id="Contact">
+    	<div class = "container">
+        <h6 class="docs-header">Contact Information</h6>
+        
+            <p>Built by Michael Schou at <a href="https://www.thedataincubator.com/" target = "_blank">The Data Incubator</a>, Summer 2016
+                <br><a href="mailto:michael.schou@mg.thedataincubator.com">michael.schou@mg.thedataincubator.com </a>
+            
+            <br><a href="https://github.com/mschou05/" target="_blank">https://github.com/mschou05/</a></p>
+        
+    	</div>
+    </div>
 
+
+        
    
 <!-- Generic container
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <div class="docs-section" id="Generic Container">
-    	<div class = "container">
+ <!--
+        <div class="docs-section" id="Generic Container">
+    	<h6 class="docs-header">Generic section</h6>
+        <div class = "container">
     	
     	</div>
     </div>
- 
+ -->
   <!--return to this to do same page calcs      
     <h1>jQuery Example</h1>
         <p>
